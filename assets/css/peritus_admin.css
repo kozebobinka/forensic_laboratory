@@ -1,0 +1,26 @@
+.ui-menu .ui-menu-item:nth-child(1) {
+	display: block;
+}
+
+.bg-dark-beige, .bg-light-beige {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+a.btn {
+	min-width: 100px;
+	padding-top: 16px;
+}
+
+.btn {
+	min-width: 150px;
+}
+
+.btn.active {
+	background: none;
+	background-color: #D9AB6D;
+	
+}
+h2 {
+	font-size:20px;
+	margin-bottom: 18px;
+}
