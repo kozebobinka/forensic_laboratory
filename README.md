@@ -1,2 +1,6 @@
 # forensic_laboratory
-test
+сайт лаборатории судебной экспертизы
+
+верстка по макету
+
+admin - на CodeIgniter
