@@ -1,7 +1,9 @@
 .ui-menu .ui-menu-item:nth-child(1) {
 	display: block;
 }
-
+.ui-selectmenu-menu {
+	z-index:1100;
+}
 .bg-dark-beige, .bg-light-beige {
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -23,4 +25,21 @@ a.btn {
 h2 {
 	font-size:20px;
 	margin-bottom: 18px;
+}
+.modal-header, .modal-footer {
+	background-color: #EDEAE5;
+}
+.modal-body {
+	background-color: #F7F4EF;
+}
+.text-strong {
+	font-weight: bold;
+}
+.text-sm {
+	font-size:12px;
+	line-height:13px;
+}
+
+.editor_wrap div {
+	margin: 0;
 }

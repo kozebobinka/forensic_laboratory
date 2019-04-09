@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-md fixed-top peritus-width">
 	<a class="navbar-brand" href="https://peritus.ru/"></a>
-	<div class="navbar-info <?=($main_page) ? 'text-right mr-2' : 'text-center' ?> text-md-left">
+	<div class="navbar-info <?=($show_letters) ? 'text-center' : 'text-right mr-2' ?> text-md-left">
 		<div><a id="a-tel-<?=$site_id?>" class="navbar-phone" href="tel:<?=$phone?>"><?=$phone?></a></div>
 		<div><a class="navbar-email" href="mailto:<?=$email?>"><?=$email?></a></div>
 	</div>
-	<? if (!$main_page) : ?>
+	<? if ($show_letters) : ?>
 	<div class="navbar-toggler collapsed text-center"  data-toggle="collapse" data-target="#top_buttons" aria-controls="top_buttons" aria-expanded="false" aria-label="Меню">
 		<span class="navbar-toggler-icon"></span>
 	</div>

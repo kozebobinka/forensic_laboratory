@@ -2,8 +2,8 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <h2>Фразы для сайта <?=$this->session->site?></h2>
-<? if ($this->session->flashdata('msg')) : ?>
-    <h2 class="text-success"> <?= $this->session->flashdata('msg') ?> </h2>
+<? if ($this->session->flashdata('msg_texts')) : ?>
+    <h2 class="text-success"> <?= $this->session->flashdata("msg_texts") ?> </h2>
 <? endif ?>
 <div class="row border-bottom border-white">
 </div>
@@ -32,9 +32,15 @@
 			</div>
 			<?=form_open('dashboard/phrases')?>
 			<div class="modal-body">
+				<input name="cmd" value="edit" hidden>
+				<input name="table" value="texts" hidden>
 				<input name="id" id="edit_item_id" value="" hidden>
-				<div class="textarea-wrap">
-					<textarea name="text" id="edit_item_text" class="form-control" placeholder=" "></textarea>								
+				<div class="form-group">
+					<label class="moving-label focus" for="edit_item_text">Текст*</label>
+					<div class="textarea-wrap m-0">
+						<textarea name="text" id="edit_item_text" class="form-control" placeholder=" "></textarea>								
+					</div>
+					<div class="invalid-feedback">Поле является обязательным</div>
 				</div>
 			</div>
 			<div class="modal-footer">

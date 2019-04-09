@@ -26,6 +26,7 @@
 				<div class="mobile-menu w-100 py-4">
 					<ul class="navbar-nav navbar-menu">
 						<? foreach ($menu as $id => $topmenu) :?>
+						<? if ($submenu[$id]) : ?>
 						<li class="nav-item pb-0 <?=($text_page['parent_id'] == $topmenu['id']) ? 'show_active' : ''?>">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<?=$topmenu['name']?>
@@ -36,6 +37,7 @@
 								<? endforeach ?>
 							</div>		
 						</li>
+						<? endif ?>
 						<? endforeach ?>
 					</ul>
 				</div>				
@@ -53,7 +55,8 @@
 		<div class="collapse navbar-collapse" id="top_menu">
 			<ul class="navbar-nav navbar-menu">
 				<? foreach ($menu as $id => $topmenu) :?>
-				<li class="nav-item dropdown <?=($text_page['parent_id'] == $topmenu['id']) ? 'show_active' : ''?>">
+				<? if ($submenu[$id]) : ?>
+					<li class="nav-item dropdown <?=($text_page['parent_id'] == $topmenu['id']) ? 'show_active' : ''?>">
 					<a class="nav-link dropdown-toggle px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<?=$topmenu['name']?>
 					</a>
@@ -63,6 +66,7 @@
 						<? endforeach ?>
 					</div>		
 				</li>
+				<? endif ?>
 				<? endforeach ?>
 			</ul>		
 		</div>

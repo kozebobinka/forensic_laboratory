@@ -24,33 +24,28 @@
 	elseif	(!isset($link[0]) or ($link[0] == ''))	$content = 'main.php';
 	else	{
 		$text_page = $db->getRow('
-			SELECT `pages`.`title`, `pages`.`text`, `menu`.`name` AS `menu_name`, `parent_menu`.`name` AS `parent_name`, 
+			SELECT `menu`.`title`, `menu`.`text`, `menu`.`name` AS `menu_name`, `parent_menu`.`name` AS `parent_name`, 
 				`menu`.`id` AS `menu_id`, `parent_menu`.`id` AS `parent_id`
 				FROM `menu`
-				LEFT JOIN `pages` ON `pages`.`menu` = `menu`.`id`
 				LEFT JOIN `menu` AS `parent_menu` ON `menu`.`parent` = `parent_menu`.`id`
 				WHERE `menu`.`link`=?s', 
 			$link[0]
 		);
 		
 		if (!$text_page) {
-				header('Location: https://peritus.ru/404');
-				exit;
-		} else {
-			if ($link[0] == '404') {
-				header("HTTP/1.0 404 Not Found");
-			} elseif ($link[0] == 'contacts') {
-				$content = 'content_page_contacts.php';
-			} else {
-				$content = 'content_page.php';
-			}
+			header('Location: https://peritus.ru/404');
+			exit;
 		}
+		if ($link[0] == '404') {
+			header("HTTP/1.0 404 Not Found");
+		} 
+		$content = 'content_page.php';
 	}
 	
 	include 'general/header.php';
 	
-	if ($docs_page) include 'general/menu_full.php';
-	else 			include 'general/menu.php';
+	if ($menu)	include 'general/menu_full.php';
+	else		include 'general/menu.php';
 	
 	include $content;
 	

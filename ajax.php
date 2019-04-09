@@ -5,10 +5,9 @@
 	
 	if (isset($_POST['file_upload'])) {  
 		$uploaddir = 'uploads/' . $_POST['file_upload'];
-		if(!is_dir( uploaddir)) mkdir($uploaddir, 0777);
+		if(!is_dir($uploaddir)) mkdir($uploaddir, 0777);
 		
-		$files      = $_FILES; 
-		$done_files = array();
+		$files      = $_FILES;
 		
 		foreach( $files as $file ){
 			move_uploaded_file( $file['tmp_name'], "$uploaddir/{$file['name']}" );

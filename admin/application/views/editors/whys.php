@@ -9,13 +9,12 @@
 	<div class="col-3">
 		Заголовок
 	</div>
-	<div class="col-5 item_description">
+	<div class="col-5">
 		Описание
 	</div>
-	<div class="col-3 item_link">
+	<div class="col-3">
 		Ссылка, если надо
 	</div>
-
 </div>
 <? foreach ($items as $item) : ?>
 <div class="row border-bottom border-white">
@@ -62,7 +61,7 @@
 				</div>
 				<div class="form-group">
 					<input type="text" name="link" id="edit_item_link" class="form-control"  value="" placeholder=" ">
-					<label class="moving-label focus" for="login">Ссылка, если надо</label>
+					<label class="moving-label focus" for="edit_item_link">Ссылка, если надо</label>
 				</div>	
 				
 			</div>

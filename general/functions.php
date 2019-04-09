@@ -6,18 +6,17 @@
 		$texts[$key] = typo($text);
 	}
 	extract($texts);
-	
+
 	$main = $db->getIndCol('id', 'SELECT `id`, `text` FROM `main`');
 	extract($main);
 	
-	if ($docs_page) {
-		$menu_full = $db->getInd('id', 'SELECT `id`, `name`, `link` FROM `menu`');
-		
-		$menu = $db->getInd('id', 'SELECT `id`, `name`, `link` FROM `menu` WHERE `parent`=0 ORDER BY `prior`');
+	$menu = $db->getInd('id', 'SELECT `id`, `name` FROM `menu` WHERE `parent`=0 ORDER BY `prior`');
+	if ($menu) {
 		foreach ($menu as $id => $topmenu) {
 			$submenu[$id] = $db->getAll('SELECT `id`, `name`, `link` FROM `menu` WHERE `parent`=?i ORDER BY `prior`', $id);
 		}
 	}
+	
 	
 	$services = $db->getAll('SELECT * FROM `services` WHERE `aside`=0');
 	$services_aside = $db->getAll('SELECT * FROM `services` WHERE `aside`=1');
@@ -34,13 +33,13 @@
 	$p_num = ceil($n_partners / 12);
 	$blocks_count = ceil($n_partners / $p_num);
 	
-	$investigations = $db->getAll('SELECT * FROM `investigations`');
-	$investigation_steps = $db->getAll('SELECT * FROM `investigation_steps`');
+	$investigations = $db->getAll('SELECT * FROM `investigations` ORDER BY `prior`');
+	$investigation_steps = $db->getAll('SELECT * FROM `investigation_steps` ORDER BY `prior`');
 	
 	$n_footers = $db->getOne('SELECT COUNT(`id`) FROM `footer`');
 	$footers_col = ceil($n_footers / 2);
-	$footers1 = $db->getAll('SELECT `text` FROM `footer` ORDER BY `id` LIMIT ?i', $footers_col);
-	$footers2 = $db->getAll('SELECT `text` FROM `footer` ORDER BY `id` LIMIT ?i OFFSET ?i', $footers_col, $footers_col);
+	$footers1 = $db->getAll('SELECT `text` FROM `footer` ORDER BY `prior` LIMIT ?i', $footers_col);
+	$footers2 = $db->getAll('SELECT `text` FROM `footer` ORDER BY `prior` LIMIT ?i OFFSET ?i', $footers_col, $footers_col);
 	
 	function get_client_image($image)
 	{

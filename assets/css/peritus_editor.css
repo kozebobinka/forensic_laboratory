@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&subset=cyrillic');
+
+body {
+	background-color: #F7F4EF;
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+	
+h2 {
+	font-family: "Roboto Slab";
+	color: #B7905C;
+	margin-bottom: 48px;
+	font-size: 36px;
+	line-height: 42px;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
+h3 {
+	margin-bottom: 24px;
+	font-size: 16px;
+	line-height: 36px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	margin: 24px 0 0 0;
+}
+
+h5 {
+	font-family: "Roboto Slab";
+	text-decoration: underline;
+	color: #212529;
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	margin: 0 0 16px 0;
+	text-align: left;
+}
+
+a {
+	color: #B7905C;
+	font-style: italic;
+	background: -moz-linear-gradient(left, #B7905C, #B7905C 60%, transparent 60%);
+    background: -ms-linear-gradient(left, #B7905C, #B7905C 60%, transparent 60%);
+    background: -o-linear-gradient(left, #B7905C, #B7905C 60%, transparent 60%);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#f00), color-stop(0.6, #B7905C), color-stop(0.6, transparent));
+    background: -webkit-linear-gradient(left, #B7905C, #B7905C 60%, transparent 60%);
+    background: linear-gradient(left, #B7905C, #B7905C 60%, transparent 60%);
+    background-size: 10px 1px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+	text-decoration: none;
+}
+a:hover{
+	color: #D9AB6D;
+	background: -moz-linear-gradient(left, #D9AB6D, #D9AB6D 60%, transparent 60%);
+    background: -ms-linear-gradient(left, #D9AB6D, #D9AB6D 60%, transparent 60%);
+    background: -o-linear-gradient(left, #D9AB6D, #D9AB6D 60%, transparent 60%);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#f00), color-stop(0.6, #D9AB6D), color-stop(0.6, transparent));
+    background: -webkit-linear-gradient(left, #D9AB6D, #D9AB6D 60%, transparent 60%);
+    background: linear-gradient(left, #D9AB6D, #D9AB6D 60%, transparent 60%);
+    background-size: 10px 1px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+	text-decoration: none;
+}
+
+.a-nounderline, .a-nounderline:hover {
+	background: none;
+}
+
+.a-classic, .a-classic:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+
+.content-page {
+	padding-top: 200px;
+}
+
+
+img {
+	max-height: 400px;
+	max-width: 90vw;
+}
+
+ul, ol {
+	padding-inline-start: 18px;
+}
+ul li {
+	color: #B7905C;
+	margin-bottom: 1rem;
+}
+li span {
+	color: #212529;
+}
+
+hr {
+  border-top: 1px solid #B7905C;
+  margin-top: 36px;
+}
+
+.img-thumbnail {
+	cursor: pointer;
+}
+.ul-condensed li {
+	margin-bottom: 0!important;
+}
+
+.anchor_link {
+	position: relative;	
+}
+.anchor_link a {
+	position: absolute; 
+	top: -80px;
+}
+.img-sm {
+height: 150px;
+margin-bottom: 10px;
+margin-top: 6px;
+}

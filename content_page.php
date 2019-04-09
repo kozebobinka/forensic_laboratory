@@ -35,6 +35,9 @@
 				<? if($text_page['menu_id'] == 12) : ?>
 				<? include "invoice_content.php"?>
 				<? endif ?>
+				<? if($text_page['menu_id'] == 18) : ?>
+				<? include "content_page_contacts.php"?>
+				<? endif ?>
 				<? if(in_array($text_page['menu_id'],[7,8,9,10])) : ?>
 				<div class="my-4">
 					<p class="py-0 my-0"><?=$request1?></p>
@@ -45,8 +48,11 @@
 			</div>
 		</div>
 	</div>
-	
 </div>
+<? if($text_page['menu_id'] == 18) : ?>
+<? include "general/map.php"?>
+<? endif ?>
+
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
         <div class="modal-content">              

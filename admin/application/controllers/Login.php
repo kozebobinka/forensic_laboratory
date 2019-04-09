@@ -22,7 +22,7 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('password', 'пароль', 'required');
 		
 		if ( ($this->form_validation->run()) and ($user = $this->login_model->chesk_user($this->input->post())) ) {
-			$this->session->set_userdata(array('site' => $data['site']));
+			$this->session->set_userdata(array('site' => $this->input->post('site')));
 			redirect('dashboard');
 		}
 		

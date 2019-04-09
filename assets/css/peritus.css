@@ -57,7 +57,7 @@ h5 {
 	}
 }
 
-input {
+input:not(.cke_dialog_ui_input_text) {
 	height: 60px !important;
 	border-radius: 30px !important;
 	padding-left: 23px !important;
@@ -68,7 +68,7 @@ input:focus {
 	border: 2px solid #B7905C !important;
 }
 
-textarea {
+textarea:not(.cke_source) {
 	height: 175px !important;
 	padding: 15px 0 0 0 !important;
 	border: none !important;
